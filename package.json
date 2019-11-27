@@ -2,7 +2,7 @@
   "name": "tweego-setup",
   "version": "2.0.0",
   "description": "A basic project setup for Tweego with all the trimmings using Node.",
-  "main": "./dist/index.html",
+  "main": "./docs/index.html",
   "config": {
     "format": "sugarcube-2"
   },
@@ -13,12 +13,12 @@
     "lint": "gulp lint",
     "lint-js": "gulp lint",
     "lint-css": "gulp validate",
-    "build": "gulp build && tweego -f $npm_package_config_format -m src/modules/ --head=src/head-content.html -o dist/index.html project && opn dist/index.html",
-    "testmode": "gulp build && tweego -f $npm_package_config_format -t -m src/modules/ --head=src/head-content.html -o dist/index.html project && opn dist/index.html",
-    "tweegobuild": "tweego -f $npm_package_config_format -m src/modules/ --head=src/modules/head-content.html -o dist/index.html project",
-    "build-win": "gulp build && tweego -f %npm_package_config_format% -m src/modules/ --head=src/head-content.html -o dist/index.html project && opn dist/index.html",
-    "testmode-win": "gulp build && tweego -f %npm_package_config_format% -t -m src/modules/ --head=src/head-content.html -o dist/index.html project && opn dist/index.html",
-    "tweegobuild-win": "tweego -f %npm_package_config_format% -m src/modules/ --head=src/head-content.html -o dist/index.html project"
+    "build": "gulp build && tweego -f $npm_package_config_format -m src/modules/ --head=src/head-content.html -o $npm_package_main project",
+    "testmode": "gulp build && tweego -f $npm_package_config_format -t -m src/modules/ --head=src/head-content.html -o $npm_package_main project ",
+    "tweegobuild": "tweego -f $npm_package_config_format -m src/modules/ --head=src/modules/head-content.html -o $npm_package_main project",
+    "build-win": "gulp build && tweego -f %npm_package_config_format% -m src/modules/ --head=src/head-content.html -o $npm_package_main project",
+    "testmode-win": "gulp build && tweego -f %npm_package_config_format% -t -m src/modules/ --head=src/head-content.html -o $npm_package_main project",
+    "tweegobuild-win": "tweego -f %npm_package_config_format% -m src/modules/ --head=src/head-content.html -o $npm_package_main project"
   },
   "keywords": [
     "twine",

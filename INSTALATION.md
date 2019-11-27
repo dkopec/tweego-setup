@@ -69,3 +69,34 @@ Set the variable name to `TWEEGO_PATH` and the value to the path that leads to y
 ### Step 5: Testing Tweego
 
 Open a command prompt and type `tweego`.  If the command is unrecognized, something was messed up, otherwise, an explanation of tweego should print out.  Type in `tweego --list-formats` to make sure you've installed all the formats correctly and set up `TWEEGO_PATH` correctly.  It should display all the formats you have in your `story-formats` directory.
+
+## Installing NodeJS
+
+You can install node from [here](https://nodejs.org/en/).  You want to grab the LTS version, usually the one on the left.  This will download an msi file, that will then install node on your system.
+
+The only thing to watch out for when installing Node is to make sure that it is added to your path, and that you include npm.  By default, both of these options will be enabled.  For best results, install node on your main hard drive (usually C) with your operating system.
+
+![alt text](https://i.imgur.com/uaXMM9k.png "Make sure to include npm and add to path!")
+
+To make sure eveything works, you can open a command prompt and type `npm`.  If the command isn't recognized, you've messed up!  Otherwise, a help message explaining npm should display.
+
+
+## Installing Gulp (Optional)
+
+The core of this build system is based on the task-runner Gulp, which just makes things a little smoother for us.  This setup uses Gulp locally already, but if you want to mess around with it more, you'll probably want to globally install it.  You can do so with the following command:
+
+`npm install --global gulp`
+
+After doing so, you'll want to look at the `gulpfile.js` file to define new tasks or alter old ones.  When installed globally, you can run gulp tasks directly, without needing to go through npm.  So `npm run gulp build` becomes `gulp build`.
+
+Again, installing gulp globally isn't required to use this setup.
+
+## Updating tweego-setup
+
+To update your build system in an ongoing project, replace the `package.json` and `gulpfile.js` files with the new versions, then delete the `node_modules` folder and the `package-lock.json` files and run `npm install` from the command-line. You can also optionally delete the `.babelrc` file if it exists, as it is no longer used, but it won't hurt anything either way. 
+
+I recommend backing up your old version via a version control system (like GitHub or BitBucket) so that you can revert the changes if things go wrong. If you don't or can't and things do indeed go wrong, saving a copy of the old `package.json` and `gulpfile.js` files is enough for you to revert back using the same process outlined above.
+
+You can check which version you currently are using and which version is the latest available in this repo in the `package.json` files, right up near the top.
+
+> Note: If you update to tweego-setup v2.0.0 or higher, you need to be sure to update to Tweego v2.0.0 or higher.
